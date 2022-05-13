@@ -7,6 +7,6 @@ import com.example.demo.Model.Organisation;
 
 @Repository
 public interface OrganisationRepository extends JpaRepository<Organisation, Long>{
-
+	Organisation findByid(long id);
 
 }

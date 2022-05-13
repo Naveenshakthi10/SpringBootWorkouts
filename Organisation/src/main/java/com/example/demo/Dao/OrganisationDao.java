@@ -19,8 +19,6 @@ public class OrganisationDao implements OrganisationRepository{
 	
 	@Autowired
 	private OrganisationRepository organisationRepository;
-	
-	
 	@Override
 	public List<Organisation> findAll() {
 		// TODO Auto-generated method stub
@@ -194,6 +192,12 @@ public class OrganisationDao implements OrganisationRepository{
 			Function<FetchableFluentQuery<S>, R> queryFunction) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Organisation findByid(long id) {
+		// TODO Auto-generated method stub
+		return organisationRepository.findByid(id);
 	}
 
 }

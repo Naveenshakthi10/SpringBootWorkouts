@@ -8,6 +8,6 @@ import com.example.demo.Model.Organisation;
 
 public interface EmployeeDetailsService {
 	
-	EmployeeDetails saveEmployeeDetails(EmployeeDetailsDto employeeDetailsDto);
+	EmployeeDetails saveEmployeeDetails(EmployeeDetailsDto employeeDetailsDto) throws Exception;
     List<EmployeeDetails> getAllEmployeeDetails();
 }

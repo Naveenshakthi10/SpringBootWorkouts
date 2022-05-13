@@ -9,6 +9,7 @@ import com.example.demo.Dao.EmployeeDetailsDao;
 import com.example.demo.Dao.OrganisationDao;
 import com.example.demo.Dto.EmployeeDetailsDto;
 import com.example.demo.Model.EmployeeDetails;
+import com.example.demo.Model.Organisation;
 import com.example.demo.Repository.EmployeeDetailsRespository;
 
 @Service
@@ -16,19 +17,25 @@ public class EmployeeDetailsImpl implements EmployeeDetailsService {
 	
 	@Autowired
 	private EmployeeDetailsDao employeeDetailsDao;
+	@Autowired
+	private OrganisationDao organisationDao;
 	
 	@Override
-	public EmployeeDetails saveEmployeeDetails(EmployeeDetailsDto employeeDetailsDto) {
+	public EmployeeDetails saveEmployeeDetails(EmployeeDetailsDto employeeDetailsDto) throws Exception {
 		
+		Organisation organisation=organisationDao.findByid(employeeDetailsDto.getOrgId());
+		if(organisation==null) {
+			throw new Exception("Organisation not found");
+		}
 		EmployeeDetails employeeDetails = new EmployeeDetails();
-		
 		employeeDetails.setId(employeeDetailsDto.getId());
 		employeeDetails.setEmployeeId(employeeDetailsDto.getEmployeeId());
 		employeeDetails.setAddress(employeeDetailsDto.getAddress());
+		employeeDetails.setOrganisation(organisation);
 		employeeDetails.setDesignation(employeeDetailsDto.getDesignation());
 		employeeDetails.setEmployeename(employeeDetailsDto.getEmployeename());
 		employeeDetails.setRole(employeeDetailsDto.getRole());
-		
+			
 		try {
 			employeeDetails = employeeDetailsDao.save(employeeDetails);
 			

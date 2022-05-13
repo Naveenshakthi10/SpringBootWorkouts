@@ -6,6 +6,7 @@ public class EmployeeDetailsDto {
 	
 	private String employeename;
 	
+	
 	private String employeeId; 
 	
 	private String designation;
@@ -13,6 +14,8 @@ public class EmployeeDetailsDto {
 	private String role;
 	
 	private String address;
+	
+	private long orgId;
 
 	public long getId() {
 		return id;
@@ -61,6 +64,15 @@ public class EmployeeDetailsDto {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	public long getOrgId() {
+		return orgId;
+	}
+
+	public void setOrgId(long orgId) {
+		this.orgId = orgId;
+	}
+	
 	
 	
 	

@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Dao.OrganisationDao;
+import com.example.demo.Dto.EmployeeDetailsDto;
 import com.example.demo.Dto.OrganisationDto;
+import com.example.demo.Model.EmployeeDetails;
 import com.example.demo.Model.Organisation;
 
 @Service
@@ -39,6 +41,14 @@ public class OrganisationServiceImpl implements Organisationservice{
 		
 		return organisation;
 	}
+
+	@Override
+	public List<Organisation> getAllorgainisation() {
+		// TODO Auto-generated method stub
+		return organisationDao.findAll();
+	}
+	
+	
 	
 
 }

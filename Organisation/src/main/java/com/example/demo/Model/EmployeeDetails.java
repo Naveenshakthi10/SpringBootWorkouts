@@ -1,10 +1,13 @@
 package com.example.demo.Model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +18,10 @@ public class EmployeeDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id",insertable = false,updatable = false)
 	private long id;
+	
+	@ManyToOne(targetEntity = Organisation.class,cascade = CascadeType.ALL)
+	@JoinColumn(name = "organisation",referencedColumnName = "id")
+	private Organisation organisation; 
 	
 	@Column(name = "Employee_name",nullable = false)
 	private String employeename;
@@ -78,6 +85,16 @@ public class EmployeeDetails {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	public Organisation getOrganisation() {
+		return organisation;
+	}
+
+	public void setOrganisation(Organisation organisation) {
+		this.organisation = organisation;
+	}
+	
+	
 	
 
 }
