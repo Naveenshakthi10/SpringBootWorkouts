@@ -30,7 +30,7 @@ public class EmployeeDetailsController {
 		if (employeeDetails != null) {
 			return new DefaultResponse(new Date(), "Success",HttpStatus.OK);
 		}
-		
+		System.err.println("Failed");
 		return new DefaultResponse(new Date(), "Failed", HttpStatus.OK);
 		
 	}
