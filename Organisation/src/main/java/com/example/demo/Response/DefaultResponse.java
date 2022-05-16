@@ -10,8 +10,6 @@ public class DefaultResponse {
 	private String message;
 	private HttpStatus status;
 	
-	
-	
 	public DefaultResponse(Date timestamp, String message, HttpStatus status) {
 		super();
 		this.timestamp = timestamp;

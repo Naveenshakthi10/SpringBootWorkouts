@@ -10,7 +10,6 @@ import com.example.demo.Dao.OrganisationDao;
 import com.example.demo.Dto.EmployeeDetailsDto;
 import com.example.demo.Model.EmployeeDetails;
 import com.example.demo.Model.Organisation;
-import com.example.demo.Repository.EmployeeDetailsRespository;
 
 @Service
 public class EmployeeDetailsImpl implements EmployeeDetailsService {
